@@ -4,9 +4,9 @@ end
 
 return {
     {
-	"folke/tokyonight.nvim",
+	"dgox16/oldworld.nvim",
 	config = function()
-	    vim.cmd.colorscheme("tokyonight")
+	    vim.cmd.colorscheme("oldworld")
 	    enable_transparency()
 	end
     },

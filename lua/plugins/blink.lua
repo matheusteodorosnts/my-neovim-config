@@ -6,6 +6,10 @@ return {
       "rafamadriz/friendly-snippets",
     },
     opts = {
+	keymap = {
+	    preset = "super-tab",
+	},
+
 	completion = {
 	    documentation = {
 		auto_show = true,

@@ -2,9 +2,11 @@ return {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
     build = ":TSUpdate",
-    config = function()
-	require("nvim-treesitter").install {
-	    "html", "css", "javascript", "typescript", "tsx", "jsx", "rust", "go", "dockerfile", "terraform", "lua", "vim",
-	}
-    end,
+    opts = {
+        ensure_installed = {
+            "html", "css", "javascript", "typescript", "tsx", "vue",
+            "rust", "go", "dockerfile", "lua", "vim",
+        },
+        highlight = { enable = true },
+    },
 }

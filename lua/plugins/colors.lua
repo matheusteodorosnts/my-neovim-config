@@ -4,9 +4,9 @@ end
 
 return {
     {
-	"dgox16/oldworld.nvim",
+	"kdheepak/monochrome.nvim",
 	config = function()
-	    vim.cmd.colorscheme("oldworld")
+	    vim.cmd.colorscheme("monochrome")
 	    enable_transparency()
 	end
     },

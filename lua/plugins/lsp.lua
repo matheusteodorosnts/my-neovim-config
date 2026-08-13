@@ -1,10 +1,9 @@
 return {
     "neovim/nvim-lspconfig",
     config = function()
-        local lspconfig = require("lspconfig")
         local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-        lspconfig.rust_analyzer.setup({
+        vim.lsp.config("rust_analyzer", {
             capabilities = capabilities,
             settings = {
                 ["rust-analyzer"] = {
@@ -13,7 +12,7 @@ return {
             },
         })
 
-        lspconfig.gopls.setup({
+        vim.lsp.config("gopls", {
             capabilities = capabilities,
             settings = {
                 gopls = {
@@ -23,7 +22,7 @@ return {
             },
         })
 
-        lspconfig.ts_ls.setup({
+        vim.lsp.config("ts_ls", {
             capabilities = capabilities,
             init_options = {
                 plugins = {
@@ -43,16 +42,25 @@ return {
             },
         })
 
-        lspconfig.volar.setup({
+        vim.lsp.config("volar", {
             capabilities = capabilities,
         })
 
-        lspconfig.cssls.setup({
+        vim.lsp.config("cssls", {
             capabilities = capabilities,
         })
 
-        lspconfig.html.setup({
+        vim.lsp.config("html", {
             capabilities = capabilities,
+        })
+
+        vim.lsp.enable({
+            "rust_analyzer",
+            "gopls",
+            "ts_ls",
+            "volar",
+            "cssls",
+            "html",
         })
     end,
 }
